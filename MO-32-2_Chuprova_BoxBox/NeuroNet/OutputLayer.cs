@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace MO_32_2_Chuprova_BoxBox.NeuroNet
@@ -9,6 +9,7 @@ namespace MO_32_2_Chuprova_BoxBox.NeuroNet
 
         // Прямой проход 
         // Softmax преобразует выходы в вероятности (сумма выходов = 1)
+        // Основное отличие в том, что выбирается максимум среди всех полей у нейронов слоя
         public override void Recognize(Network net, Layer nextLayer)
         {
             double max = neurons.Max(n => n.Output);
